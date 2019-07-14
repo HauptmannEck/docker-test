@@ -7,12 +7,12 @@ COPY package.json package-lock.json ./
 
 # install and cache app dependencies
 RUN npm install --silent
-RUN npm install react-scripts@3.0.1 -g --silent
+RUN npm install serve -g --silent
 
 COPY . .
 
+RUN npm run build
+
 EXPOSE 3000
 
-RUN ls
-
-CMD ["npm", "start"]
+CMD ["serve", "-p", "3000", "-s", "./build"]

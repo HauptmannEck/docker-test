@@ -13,5 +13,6 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["ls"]
+RUN ls
+
 CMD ["npm", "start"]
